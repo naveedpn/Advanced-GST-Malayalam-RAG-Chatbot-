@@ -1,6 +1,42 @@
-#  Malayalam GST Book — Advanced RAG Assistant
+# 📚 Malayalam GST Book — Advanced RAG Assistant
 
 An advanced, context-aware Retrieval-Augmented Generation (RAG) assistant designed to query complex, bilingual (Malayalam and English) GST regulatory text. This application utilizes high-fidelity OCR, hierarchical indexing, and the **Proxy-Pointer architecture** to deliver fully reconstructed legal section contexts to Gemini models without fragmentation.
+
+---
+
+## 📸 Application Gallery & Walkthrough
+
+Here is a visual walkthrough of the Malayalam GST Book RAG Assistant in action, demonstrating the user interface and backend execution.
+
+### 💬 1. Chatbot Interface & Intelligent QA
+The Chatbot tab provides a clean, premium, ChatGPT-style chat interface for interactive querying. 
+
+```carousel
+![GST Chatbot Interface - Query & Answer](screenshots/Screenshot%202026-05-24%20125353.png)
+<!-- slide -->
+![Chatbot Session & LLM Detailed Explanations](screenshots/Screenshot%202026-05-24%20125409.png)
+```
+
+* **Interactive Conversations:** Users can query the database in Malayalam or English (e.g., asking about *വകുപ്പ് 4* or *Rules of Registration*).
+* **Standalone Context Rewriting:** Behind the scenes, the chatbot takes previous chat history and rewrites follow-up questions into standalone queries before searching the vector database.
+* **Professional Legal Drafting:** The assistant returns comprehensive, detailed answers, laying out sub-points clearly in the target language.
+
+---
+
+### ⚙️ 2. Database Builder & High-Fidelity OCR Pipeline
+The Database Builder tab acts as an administrative console where the raw PDF files are ingested, OCR'd, structurally chunked, and embedded into the local vector store.
+
+```carousel
+![Database Ingestion & Poppler DPI-300 Extraction](screenshots/Screenshot%202026-05-24%20125501.png)
+<!-- slide -->
+![Bilingual OCR Process & Status Feedback](screenshots/Screenshot%202026-05-24%20125518.png)
+<!-- slide -->
+![Vector Embedding Batch Processing & Chroma Storage](screenshots/Screenshot%202026-05-24%20125527.png)
+```
+
+* **High-Quality OCR Extraction:** Using Tesseract OCR configured for bilingual `mal+eng` text alongside a Poppler-backed renderer, pages are scanned at 300 DPI to preserve Malayalam character fidelity.
+* **Status Updates & Progress Bars:** The builder provides real-time progress indicators showing page conversion, extraction counts, and chunk statistics.
+* **Hierarchical Chunking & Cosine Embeddings:** The system automatically groups the extracted pages structurally into chapters/rules, pre-calculates cosine-space metrics, and uploads the documents in batches to ChromaDB.
 
 ---
 
@@ -25,7 +61,7 @@ graph TD
     K -->|11. Generate Answer| L[Detailed Chatbot Response]
 ```
 
-### 1.  Hierarchical Rule Clustering
+### 1. 🗂️ Hierarchical Rule Clustering
 Legal texts are structured into nested logical domains (Chapters $\rightarrow$ Rules/Sections $\rightarrow$ Sub-clauses). 
 * **The Parser:** Our structural splitter (`chunk_all_pages_structurally`) scans the document text to parse active chapters (e.g., *അദ്ധ്യായം 4* / *Chapter IV*) and rules/sections (e.g., *ചട്ടം 10* / *Rule 10*).
 * **The Cluster:** Every chunk generated is cataloged as a child under its parent rule/section. This forms database-level clusters where chunks are explicitly grouped under a unified legal segment, preserving the structural layout of the tax code.
