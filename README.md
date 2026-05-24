@@ -1,10 +1,10 @@
-# 📚 Malayalam GST Book — Advanced RAG Assistant
+#  Malayalam GST Book — Advanced RAG Assistant
 
 An advanced, context-aware Retrieval-Augmented Generation (RAG) assistant designed to query complex, bilingual (Malayalam and English) GST regulatory text. This application utilizes high-fidelity OCR, hierarchical indexing, and the **Proxy-Pointer architecture** to deliver fully reconstructed legal section contexts to Gemini models without fragmentation.
 
 ---
 
-## 📸 Application Gallery & Walkthrough
+##  Application Gallery & Walkthrough
 
 Here is a visual walkthrough of the Malayalam GST Book RAG Assistant in action, demonstrating the user interface and backend execution.
 
