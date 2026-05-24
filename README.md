@@ -9,13 +9,15 @@ An advanced, context-aware Retrieval-Augmented Generation (RAG) assistant design
 Here is a visual walkthrough of the Malayalam GST Book RAG Assistant in action, demonstrating the user interface and backend execution.
 
 ### 💬 1. Chatbot Interface & Intelligent QA
-The Chatbot tab provides a clean, premium, ChatGPT-style chat interface for interactive querying. 
+The Chatbot tab provides a clean, premium, ChatGPT-style chat interface for interactive querying.
 
-```carousel
-![GST Chatbot Interface - Query & Answer](screenshots/Screenshot%202026-05-24%20125353.png)
-<!-- slide -->
-![Chatbot Session & LLM Detailed Explanations](screenshots/Screenshot%202026-05-24%20125409.png)
-```
+<p align="center">
+  <img src="screenshots/Screenshot%202026-05-24%20125353.png" width="90%" alt="GST Chatbot Interface - Query & Answer" />
+</p>
+
+<p align="center">
+  <img src="screenshots/Screenshot%202026-05-24%20125409.png" width="90%" alt="Chatbot Session & LLM Detailed Explanations" />
+</p>
 
 * **Interactive Conversations:** Users can query the database in Malayalam or English (e.g., asking about *വകുപ്പ് 4* or *Rules of Registration*).
 * **Standalone Context Rewriting:** Behind the scenes, the chatbot takes previous chat history and rewrites follow-up questions into standalone queries before searching the vector database.
@@ -26,13 +28,17 @@ The Chatbot tab provides a clean, premium, ChatGPT-style chat interface for inte
 ### ⚙️ 2. Database Builder & High-Fidelity OCR Pipeline
 The Database Builder tab acts as an administrative console where the raw PDF files are ingested, OCR'd, structurally chunked, and embedded into the local vector store.
 
-```carousel
-![Database Ingestion & Poppler DPI-300 Extraction](screenshots/Screenshot%202026-05-24%20125501.png)
-<!-- slide -->
-![Bilingual OCR Process & Status Feedback](screenshots/Screenshot%202026-05-24%20125518.png)
-<!-- slide -->
-![Vector Embedding Batch Processing & Chroma Storage](screenshots/Screenshot%202026-05-24%20125527.png)
-```
+<p align="center">
+  <img src="screenshots/Screenshot%202026-05-24%20125501.png" width="90%" alt="Database Ingestion & Poppler DPI-300 Extraction" />
+</p>
+
+<p align="center">
+  <img src="screenshots/Screenshot%202026-05-24%20125518.png" width="90%" alt="Bilingual OCR Process & Status Feedback" />
+</p>
+
+<p align="center">
+  <img src="screenshots/Screenshot%202026-05-24%20125527.png" width="90%" alt="Vector Embedding Batch Processing & Chroma Storage" />
+</p>
 
 * **High-Quality OCR Extraction:** Using Tesseract OCR configured for bilingual `mal+eng` text alongside a Poppler-backed renderer, pages are scanned at 300 DPI to preserve Malayalam character fidelity.
 * **Status Updates & Progress Bars:** The builder provides real-time progress indicators showing page conversion, extraction counts, and chunk statistics.
@@ -106,7 +112,7 @@ Standard top-$k$ chunk retrieval retrieves disjointed paragraphs from different 
 ### Installation
 1. Clone this repository:
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/naveedpn/Advanced-GST-Malayalam-RAG-Chatbot-.git
    cd Rag_GST
    ```
 2. Activate your virtual environment:
