@@ -1,4 +1,4 @@
-# 📚 Malayalam GST Book — Advanced RAG Assistant
+#  Malayalam GST Book — Advanced RAG Assistant
 
 An advanced, context-aware Retrieval-Augmented Generation (RAG) assistant designed to query complex, bilingual (Malayalam and English) GST regulatory text. This application utilizes high-fidelity OCR, hierarchical indexing, and the **Proxy-Pointer architecture** to deliver fully reconstructed legal section contexts to Gemini models without fragmentation.
 
@@ -25,7 +25,7 @@ graph TD
     K -->|11. Generate Answer| L[Detailed Chatbot Response]
 ```
 
-### 1. 🗂️ Hierarchical Rule Clustering
+### 1.  Hierarchical Rule Clustering
 Legal texts are structured into nested logical domains (Chapters $\rightarrow$ Rules/Sections $\rightarrow$ Sub-clauses). 
 * **The Parser:** Our structural splitter (`chunk_all_pages_structurally`) scans the document text to parse active chapters (e.g., *അദ്ധ്യായം 4* / *Chapter IV*) and rules/sections (e.g., *ചട്ടം 10* / *Rule 10*).
 * **The Cluster:** Every chunk generated is cataloged as a child under its parent rule/section. This forms database-level clusters where chunks are explicitly grouped under a unified legal segment, preserving the structural layout of the tax code.
